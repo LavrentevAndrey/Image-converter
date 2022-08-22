@@ -58,7 +58,10 @@ void asci_print(char **symbols, int length, int high, Pixel *block_colur) {
         for (int j = 0; j < length; j++) {
             printf("\033[38;2;%d;%d;%dm", block_colur[i * length + j].r, block_colur[i * length + j].g, block_colur[i * length + j].b);
             printf("%c", symbols[i][j]);
+<<<<<<< HEAD
             //printf("\033[0m");
+=======
+>>>>>>> 51c5c72b447ac12190ce8f4fd7d3175dc5da5eb3
         }
         printf("\n");
     }

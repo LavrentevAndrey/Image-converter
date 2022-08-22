@@ -5,6 +5,7 @@
 #define MAXLEN 100
 
 int main() {
+<<<<<<< HEAD
      printf("\x1B[40m");
      int mode = 1;
      printf("Select mode: (1 - ppm) (2 - ppm gif)\n");
@@ -78,5 +79,24 @@ int main() {
      else {
           printf("Incorrect mode\n");
      }
+=======
+     char pic[MAXLEN];
+     printf("PPM picture name:\n");
+     scanf("%s", pic);
+     Image* image = read_image(pic);
+     //black_white(image);
+     int x, y;
+     printf("Size of picture in letter (x, y): \n");
+     scanf("%d %d", &x, &y);
+     Pixel tmp;
+     Pixel *ptmp = &tmp;
+     Pixel **block_colour = &ptmp;
+     char **asci = convert_image2str(image, x, y, block_colour);
+     asci_print(asci, x, y, *block_colour);
+     
+     free_asci(asci, y);
+     free_image(image);
+     free(*block_colour);
+>>>>>>> 51c5c72b447ac12190ce8f4fd7d3175dc5da5eb3
      return 0;
 }
